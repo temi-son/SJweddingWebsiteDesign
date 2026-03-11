@@ -1,0 +1,20 @@
+{
+    "couple": {
+        "bride": "Sarah",
+        "groom": "John",
+        "initials": "S & J"
+    },
+    "event": {
+        "day": "Saturday",
+        "date": "2026-09-12",
+        "startTime": "14:00",
+        "endTime": "17:00",
+        "location": "London, UK",
+        "venue": "The Glasshouse Victoria",
+        "description": "Sarah and John's Wedding"
+    },
+    "sections": {
+        "heroTagline": "We’re Getting Married!",
+        "saveTheDate": "Save the Date"
+    }
+}

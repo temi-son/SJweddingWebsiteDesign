@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lemon-chiffon: #FFFACD;
+  --color-ultra-violet: #5F4B8B;
+  --color-uv-light: #7B68A1;
+  --font-serif: "Playfair Display", serif;
+  --shadow-glass: 0 8px 32px 0 rgba(95, 75, 139, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-lemon-chiffon text-ultra-violet antialiased;
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .nav-pill {
+    @apply fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-auto flex items-center justify-between gap-4 px-6 py-3 rounded-full bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass transition-all duration-300;
+  }
+
+  .btn-uv {
+    @apply bg-ultra-violet text-lemon-chiffon px-8 py-3 rounded-full shadow-xl font-serif font-bold hover:scale-105 transition-transform inline-block text-center;
+  }
+
+  add-to-calendar-button::part(button) {
+    background: transparent !important;
+    border: none !important;
+    color: #FFFACD !important;
+    /* Force Lemon Chiffon */
+    text-decoration: none !important;
+    /* Kill the blue underline */
+    font-family: "Playfair Display", serif !important;
+    font-weight: 700 !important;
+    font-size: 1.125rem !important;
+    /* text-lg */
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Ensure the hover state doesn't turn blue */
+  add-to-calendar-button::part(button):hover {
+    color: #FFFACD !important;
+    text-decoration: none !important;
+    background: transparent !important;
+  }
+
+  /* This styles the modal that pops up after clicking */
+  :root {
+    --atcb-background: #FFFACD;
+    /* Lemon Chiffon */
+    --atcb-text: #5F4B8B;
+    /* Ultra Violet */
+    --atcb-btn-background: #5F4B8B;
+    --atcb-btn-text: #FFFACD;
+  }
+
+  /* Force the invisible component to fill the parent container */
+  add-to-calendar-button {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
+
+  /* Ensure the internal parts don't have any hidden borders or weird shapes */
+  add-to-calendar-button::part(button) {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    /* Total invisibility */
+    cursor: pointer !important;
+  }
+
+
+}
